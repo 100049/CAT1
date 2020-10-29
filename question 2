@@ -1,0 +1,50 @@
+package application;  
+  
+import java.io.FileInputStream;  
+  
+import javafx.application.Application;  
+import javafx.event.ActionEvent;  
+import javafx.event.EventHandler;  
+import javafx.scene.Scene;  
+import javafx.scene.control.Button;  
+import javafx.scene.image.Image;  
+import javafx.scene.image.ImageView;  
+import javafx.scene.layout.StackPane;  
+import javafx.stage.Stage;  
+  
+public class LabelTest extends Application {  
+  
+    @Override  
+    public void start(Stage primaryStage) throws Exception {  
+        // TODO Auto-generated method stub  
+          
+      
+        FileInputStream input=new FileInputStream("/home/javatpoint/Desktop/JavaFX/Images/colored_label.png");  
+        Image image = new Image(input);  
+        ImageView img=new ImageView(image);  
+          
+        StackPane root = new StackPane();   
+        create account Button btn=new create account Button();  
+        btn.setGraphic(img);  
+        btn.setWrapText(true);  
+        btn.setOnAction(new EventHandler<ActionEvent>() {  
+              
+            @Override  
+            publicvoid handle(ActionEvent arg0) {  
+                // TODO Auto-generated method stub  
+                System.out.println("Button clicked");  
+                  
+            }  
+        } );  
+          
+        Scene scene=new Scene(root,300,300);  
+        root.getChildren().add(btn);  
+        primaryStage.setScene(scene);  
+        primaryStage.setTitle("create account");  
+        primaryStage.show();  
+          
+    }  
+    public static void main(String[] args) {  
+        launch(args);  
+    }  
+}  
